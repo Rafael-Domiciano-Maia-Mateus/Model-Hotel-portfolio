@@ -1,0 +1,101 @@
+.rooms-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.room-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--navy-800);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.5s var(--ease-aurora), box-shadow 0.5s var(--ease-aurora);
+}
+
+.room-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px -24px rgba(0,0,0,0.6);
+}
+
+.room-media {
+  position: relative;
+  aspect-ratio: 16/11;
+  overflow: hidden;
+}
+
+.room-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-aurora);
+}
+
+.room-card:hover .room-media img { transform: scale(1.08); }
+
+.room-price-tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(11,18,32,0.78);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.room-price-tag span { color: var(--gold-400); }
+
+.room-body { padding: 28px 26px 30px; }
+.room-body h3 { font-size: 1.3rem; margin-bottom: 10px; }
+.room-body > p { color: var(--ink-muted); font-size: 0.93rem; margin-bottom: 18px; }
+
+.room-meta {
+  display: flex;
+  gap: 18px;
+  font-size: 0.82rem;
+  color: var(--gold-300);
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.room-amenities {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.room-amenities li {
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.room-amenities li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  flex-shrink: 0;
+}
+
+.room-cta {
+  width: 100%;
+  justify-content: space-between;
+  padding: 14px 22px;
+}
+
+@media (min-width: 768px) {
+  .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1280px) {
+  .rooms-grid { grid-template-columns: repeat(4, 1fr); }
+  .rooms-grid .room-card:nth-child(odd) { transform: translateY(0); }
+}
