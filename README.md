@@ -1,8 +1,9 @@
-# Hotel Aurora — Landing Page (Portfólio)
+# Hotel Portfólio — Landing Page (Portfólio)
 
 Landing page premium para um resort fictício de 5 estrelas, construída em **React + Vite**.
 
 ## Stack
+
 - React 19 + Vite
 - CSS puro com design tokens (sem framework de UI)
 - `react-icons` para iconografia
@@ -29,6 +30,7 @@ src/
 ```
 
 ## Destaques de implementação
+
 - **Code splitting**: seções abaixo da dobra são carregadas via `React.lazy`.
 - **Lazy loading de imagens**: atributo `loading="lazy"` em toda imagem fora do hero.
 - **Acessibilidade**: navegação por teclado, `aria-label`s, foco visível, hierarquia semântica de headings.
@@ -37,5 +39,6 @@ src/
 - **Imagens**: placeholders de alta qualidade via Unsplash (uso livre/royalty-free).
 
 ## Substituindo conteúdo
+
 Praticamente todo o texto e dados (quartos, comodidades, depoimentos, galeria, estatísticas)
 estão centralizados em `src/data/content.js` — edite ali para customizar o site.
